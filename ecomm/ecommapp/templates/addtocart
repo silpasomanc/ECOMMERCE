@@ -1,0 +1,24 @@
+context processors.py file cerate in ecomm app:
+common ayiit pass cheyydath context procedures il kodukkam.
+{% if request.user.carts_set.all.count > 0 %}
+                            {{request.user.carts_set.all.count}}
+                            {% else %}
+                            0
+                            {% endif %}
+
+
+
+
+        PYTHON SHELL:
+        env\Scripts\activate
+        cd ecomm
+        py manage.py shell
+        >>> from ecommapp.models import Category
+        >>> data=Category.objects.all()
+        >>> data
+        out:
+        <QuerySet [<Category: TV>, <Category: LAPTOP>, <Category: MOBILE>]>
+        data=Category.objects.get(id=1)
+
+        GIT&GITHUB:
+        

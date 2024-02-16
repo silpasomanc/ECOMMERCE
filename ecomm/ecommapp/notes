@@ -1,0 +1,69 @@
+
+ADMIN SIDE-
+py manage.py createsuperuser- for getting the admin password and user name (admin)
+admin nte panelilek new registration through admin.py
+return self.category_name - include in models
+
+IMAGE FIELD ADD-
+ADD A EXTRA EXTENTION-1.pip install pillow
+after insatlling
+2.py manage.py makemigrations
+3.py manage.py migrate 
+
+after adding products:
+
+productsine indexilek list chyyuka
+data baseil ninnum all data s edukkuan objects.all()
+and import products fromecomm app in view
+
+delete the product except one in index.html
+ACCESSING IMAGES:
+how to access images on staticfile (manage static files in django) ee sitil keruka athil ,Serving files uploaded by a user during development
+CODE:
+# from django.contrib import admin
+# from django.urls import path
+# from ecommapp import views
+# from django.conf import settings
+# from django.conf.urls.static import static
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('',views.HomeView.as_view(),name='home_view'),
+#     path('user/reg',views.UserRegisterView.as_view(),name='reg_view'),
+#     path('user/log',views.UserLoginView.as_view(),name='log_view'),
+#     path('user/logout',views.UserLogoutView.as_view(),name='logout_view'),
+# ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+EXTENDS:(FOR CLICKING THE VIEW OPTION NEW HTML PAGE OPEN WITH SAME INDEX DETAILS BUT ONLY DISPLAY SEPERATE IMAGES)
+<!-- same index.html file  we required when the view button is opened so topil {% extends 'index.html'%}
+then change chyyda portions block ayi set chyyuka block content sectionte topil kodukkuka and add the end block at the end of the sectionie, section thazhe 
+ithin shesham  index.html ile loops ozivakki ectionte ullile contents ivide sectionil kodukkuka -->
+
+FOR ADD TO CART:
+    create a new model class carts
+
+# class Carts(models.Model):
+#     user=models.ForeignKey(User,on_delete=models.CASCADE)
+#     product=models.ForeignKey(Products,on_delete=models.CASCADE)
+#     quantity=models.PositiveIntegerField(default=1)
+#     options=(
+#         ('in-cart','in-cart'),#like key value pairs
+#         ('cancelled','cancelled'),
+#         ('order-placed','order-placed'),
+#     )
+#     status=models.CharField(max_length=100,choices=options,default='in-cart')# ivide kodukkuna choices mukalil kodutha options ayirikkum vruka ie incart,cancelled,order placed ithil default ayitt in-cart ann koduthittullath bakkiyoke nmmuk set chyyam ie cancelled and the order placed
+
+# NEXT STEP ADD THE QUATITY FIELD SIN FORM:
+
+# THEN VIEW CREATE A NEW CLASS ADDTOCARTVIEW
+
+# FOR GETTING CART ITEM on the top of the home page add cart
+
+# object.carts.set.all-used for getting the count of all the datas
+
+
+# {% if request.user.carts_set.all.count > 0 %}
+#            {{request.user.carts_set.all.count}}
+#            {% else %}
+#            0
+#            {% endif %}
+
